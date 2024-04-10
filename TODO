@@ -1,0 +1,26 @@
+// Check que le map est .ber, faire gaffe que y a autre chose que .ber, HEHE , :check:
+
+// Check que il y a : :check: 
+    Un joueur
+    Un exit
+    1 et + de coin
+    
+// Check que tous les coins sont accessibles au joueur
+
+// Check si la map est un rectangle ou carre ?? :check:
+
+// Faire que ca quitte quand on appuie sur X :check:
+
+// Free tout quand cest :
+    Termine
+    On ESC
+    On appuie sur X
+    Errors
+
+
+// Check si y a que des murs autour de la map
+    map[0] et map[height] que des 1
+    map[i][0] == 1 et map[i][len] == 1
+
+
+// AFFICHER LE NOMBRE DE MOVES DE FAIT QUAND ESC X ET QUAND ON GAGNE ///////
