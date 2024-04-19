@@ -5,13 +5,13 @@ int	key_press(int keysym, t_data *data)
 	if (keysym == XK_Escape)
 		escaping(data);
 	if (keysym == XK_w || keysym == XK_Up)
-		image(data, data->img.img_player_b, data->pos.x, data->pos.y);
+		image(data, data->img.img[PLAYER_B], data->pos.x, data->pos.y);
 	if (keysym == XK_s || keysym == XK_Down)
-		image(data, data->img.img_player, data->pos.x, data->pos.y);
+		image(data, data->img.img[PLAYER], data->pos.x, data->pos.y);
 	if (keysym == XK_a || keysym == XK_Left)
-		image(data, data->img.img_player_l, data->pos.x, data->pos.y);
+		image(data, data->img.img[PLAYER_L], data->pos.x, data->pos.y);
 	if (keysym == XK_d || keysym == XK_Right)
-		image(data, data->img.img_player_r, data->pos.x, data->pos.y);
+		image(data, data->img.img[PLAYER_R], data->pos.x, data->pos.y);
 	return (0);
 }
 

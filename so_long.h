@@ -6,7 +6,7 @@
 /*   By: dakojic <dakojic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:47:16 by dakojic           #+#    #+#             */
-/*   Updated: 2024/04/10 16:50:22 by dakojic          ###   ########.fr       */
+/*   Updated: 2024/04/11 18:27:03 by dakojic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@
 # include <string.h> 
 # include "utils/gnl/get_next_line.h"
 
+
+enum	data_img{
+	PLAYER,
+	PLAYER_L,
+	PLAYER_R,
+	PLAYER_B,
+	EXITNO,
+	EXITOK,
+	WALL,
+	COIN,
+	REMAINS,
+	FLOOR,
+	END
+};
  typedef	struct s_pos
 {
 	int	x;
@@ -39,6 +53,7 @@ typedef struct s_img
 {
 	int		height;
 	int		width;
+	void	*img[10];
 	void	*img_floor;
 	void	*img_player;
 	void	*img_player_r;
@@ -50,6 +65,7 @@ typedef struct s_img
 	void	*img_collect;
 	void	*img_remains;
 
+	char *img_asset[10];
 	char *player;
 	char *player_r;
 	char *player_l;
@@ -124,5 +140,6 @@ void map_filler(t_data *data, char **av);
 int	ber_check(char *av);
 size_t	ft_strlen(const char *str);
 void	image(t_data *data, void *img, int x, int y);
+void	free_if_fail(t_data *data, int i, int win);
 
 #endif

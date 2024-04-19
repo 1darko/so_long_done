@@ -6,7 +6,7 @@ void	map_filler(t_data *data, char **av)
 	int	j;
 
 	fd = open(av[1], 0);
-	if ((fd == -1))
+	if (fd == -1)
 		error_display(0, "Error : unable to open the map\n", 0);
 	j = 0;
 	while (1)

@@ -1,7 +1,16 @@
 NAME = so_long
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra -g3
-SRC = test.c \
+
+# Path to mlx header files
+MLX_INCLUDE = minilibx-linux/
+
+# Path to utils directory
+UTILS_DIR = utils/
+PRINTF_DIR = $(UTILS_DIR)printf/
+GNL_DIR = $(UTILS_DIR)gnl/
+
+SRC = so_long.c \
 	  $(UTILS_DIR)asset_tools.c \
 	  $(UTILS_DIR)free_and_malloc.c \
 	  $(UTILS_DIR)map_creations.c \
@@ -15,16 +24,7 @@ SRC = test.c \
 	  $(GNL_DIR)get_next_line.c \
 	  $(GNL_DIR)get_next_line_utils.c
 
-
 OBJ = $(SRC:.c=.o)
-
-# Path to mlx header files
-MLX_INCLUDE = minilibx-linux/
-
-# Path to utils directory
-UTILS_DIR = utils/
-PRINTF_DIR = $(UTILS_DIR)printf/
-GNL_DIR = $(UTILS_DIR)gnl/
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(MLX_INCLUDE) -I$(PRINTF_DIR) -I$(GNL_DIR) -c $< -o $@

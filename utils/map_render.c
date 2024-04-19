@@ -8,25 +8,25 @@ void	image(t_data *data, void *img, int x, int y)
 void	render_map(char symbol, int x, int y, t_data *data)
 {
 	if (symbol == '1')
-		image(data, data->img.img_wall, x, y);
+		image(data, data->img.img[WALL], x, y);
 	else if (symbol == '0')
-		image(data, data->img.img_floor, x, y);
+		image(data, data->img.img[FLOOR], x, y);
 	else if (symbol == 'P')
 	{
 		data->pos.x = x;
 		data->pos.y = y;
-		image(data, data->img.img_player, x, y);
+		image(data, data->img.img[PLAYER], x, y);
 	}
 	else if (symbol == 'E')
 	{	
 		data->pos.exit_x = x / data->img.width;
 		data->pos.exit_y = y / data->img.height;
-		image(data, data->img.img_exitNO, x, y);
+		image(data, data->img.img[EXITNO], x, y);
 	}
 	else if (symbol == 'C')
 	{	
 		data->coins += 1;
-		image(data, data->img.img_collect, x, y);
+		image(data, data->img.img[COIN], x, y);
 	}
 }
 

@@ -14,7 +14,7 @@ void	sign_check(int count[3], int cur[2], t_data *data, char **map)
 		else if (map[cur[0]][cur[1]] != '\n'
 				&& map[cur[0]][cur[1]] != '0' && map[cur[0]][cur[1]] != '1')
 			error_display(data,
-				"Error : oops something aint right with the map !", 1);
+				"Error\n", 1);
 		cur[1]++;
 	}
 }
@@ -71,9 +71,9 @@ void	map_check_square(t_data *data)
 	while (data->map[j] != NULL)
 	{	
 		if (ref != (int)ft_strlen(data->map[j]) && data->map[j + 1])
-			error_display(data, "Error : map not a square or rectangle\n", 1);
+			error_display(data, "Error\n", 1);
 		if ((((ref - (int)ft_strlen(data->map[j])) != 1)) && !data->map[j + 1])
-			error_display(data, "Error : map not a square or rectangle\n", 1);
+			error_display(data, "Error\n", 1);
 		j++;
 	}
 }
